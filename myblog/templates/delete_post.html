@@ -3,7 +3,7 @@
 
 {% block content %}
 
-
+{% if user.is_authenticated %}
 
 <br>
 <h1>Delete Blog</h1>
@@ -17,5 +17,9 @@
         <button class="btn btn-danger">Delete Blog</button>
     </form>
 </div>
+
+{% else %}
+You're not logged in, please login to delete this post!
+{% endif %}
 
 {% endblock %}
