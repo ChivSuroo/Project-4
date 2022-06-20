@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+<h1> {{ cat }} </h1>
+
+<ul>
+{% for post in category_posts %}
+
+  <small class="text-primary"> {{ post.category }}</small>
+  <li><a href="{% url 'article-detail' post.pk %}">{{ post.title }}</a> <small>{{ post.blog_date }}</small> -
+    <small>{{ post.author.first_name }}
+    {{ post.author.last_name }} </small> {% if user.is_authenticated %}
+    <small><a href="{% url 'update_post' post.pk %}">Edit</a></small><br>
+    {% endif %}
+
+
+    {{ post.body|slice:"200"|safe }} </li> <br>
+
+{% endfor %}
+</ul>
+
+{% endblock %}
