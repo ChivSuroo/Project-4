@@ -4,6 +4,7 @@
 {% block content %}
 
 {% if user.is_authenticated %}
+{% if user.id == post.author.id %}
 
 <br>
 <h1>Update Blog</h1>
@@ -14,7 +15,9 @@
     <button class="btn btn-dark">Update Now</button> <a href="{% url 'delete_post' post.pk %}" class="btn btn-danger">Delete Post</a>
 </form>
 </div>
-
+{% else %}
+You're logged in to the incorrect account!!!
+{% endif %}
 {% else %}
 
 You're not logged in, please login to edit posts!
