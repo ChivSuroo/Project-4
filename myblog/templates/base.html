@@ -49,15 +49,15 @@
 
                     {% else %}
 
-                    <li class="nav-item">
+                    <button class="btn btn-outline-info"><li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'add_post' %}">Create Blog</a>
-                    </li>
-                    <li class="nav-item">
+                    </li> </button>
+                    <button class="btn btn-outline-info"><li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'register' %}">Register</a>
-                    </li>
-                    <li class="nav-item">
+                    </li> </button>
+                    <button class="btn btn-outline-info"><li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{% url 'login' %}">Login</a>
-                    </li>
+                    </li> </button>
 
                     {% endif %}
                 </ul>
