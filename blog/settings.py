@@ -13,7 +13,6 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 import os
 import dj_database_url
 import django_heroku
-from decouple import config
 
 from pathlib import Path
 
@@ -55,7 +54,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddlewear',
 ]
 
 ROOT_URLCONF = 'blog.urls'
@@ -82,16 +80,16 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
-    'default': dj_database_url.parse('postgres://tjjtlpxkbofkor:92e1503043a65ad1dd7f39ed95d456d381678cc0a6b344aa1a42525c95d708a5@ec2-23-23-151-191.compute-1.amazonaws.com:5432/d9qef9gdkc964d')
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
+
+# DATABASES = {
+#     'default': dj_database_url.parse('postgres://rfyelkusaqnyhq:67385746d9ecefa389a5016ebbf1113ea4e6db13e549430b69f86ddd7eab2918@ec2-3-224-8-189.compute-1.amazonaws.com:5432/d52pe4p3jaguc3')
+# }
 
 
 
@@ -137,8 +135,6 @@ STATICFILES_DIR = [
     os.path.join(BASE_DIR, 'static')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
 # Default primary key field type
