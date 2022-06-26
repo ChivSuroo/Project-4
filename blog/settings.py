@@ -82,16 +82,16 @@ WSGI_APPLICATION = 'blog.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
-#     'default': dj_database_url.parse('postgres://rfyelkusaqnyhq:67385746d9ecefa389a5016ebbf1113ea4e6db13e549430b69f86ddd7eab2918@ec2-3-224-8-189.compute-1.amazonaws.com:5432/d52pe4p3jaguc3')
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
 # }
+
+DATABASES = {
+    'default': dj_database_url.parse('postgres://aksthmdjfmqwfx:caad1859a7665f12469e816c6803cf102644341e3698ab5b6a750cd5ef011155@ec2-34-200-35-222.compute-1.amazonaws.com:5432/dbl8600hoq605t')
+}
 
 
 
