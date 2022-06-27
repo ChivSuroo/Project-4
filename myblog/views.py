@@ -8,7 +8,9 @@ from django.http import HttpResponseRedirect
 # from django.contrib.exceptions import OperationalError
 
 def CategoryView(request, cat):
+    print("hy category",cat)
     category_posts = Post.objects.filter(category=cat)
+    print(category_posts)
     return render(request, 'categories.html', {'cat':cat, 'category_posts':category_posts})
 
 def LikeView(request, pk):
