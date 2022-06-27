@@ -3,9 +3,7 @@ from .models import Post, Category
 
 choices = [('pc', 'pc'), ('playstation', 'playstation'), ('xbox', 'xbox'),]
 # choices = Category.objects.all().values_list('name')
-# choice_list = []
-# for item in choices:
-#     choice_list.append(item)
+
 
 class PostForm(forms.ModelForm):
     class Meta:
