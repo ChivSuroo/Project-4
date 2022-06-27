@@ -1,8 +1,8 @@
 from django import forms
 from .models import Post, Category
 
-choices = [('pc', 'PC'), ('playstation', 'Playstation'), ('xbox', 'Xbox'),]
-# choices = Category.objects.all().values_list('name', 'name')
+# choices = [('pc', 'PC'), ('playstation', 'Playstation'), ('xbox', 'Xbox'),]
+choices = Category.objects.all().values_list('name', 'name')
 
 # choice_list = []
 # for item in choices:
