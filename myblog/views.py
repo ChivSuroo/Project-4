@@ -1,9 +1,11 @@
+from nis import cat
 from django.shortcuts import render, get_object_or_404
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from .models import Post, Category
 from .forms import PostForm, EditForm
 from django.urls import reverse_lazy, reverse
 from django.http import HttpResponseRedirect
+# from django.contrib.exceptions import OperationalError
 
 def CategoryView(request, cat):
     category_posts = Post.objects.filter(category=cat)
@@ -22,7 +24,11 @@ class HomeView(ListView):
     ordering = ['blog_date']
 
     def get_context_data(self, *args, **kwargs):
-        cat_menu = []
+        # cat_menu = []
+        try:
+            cat_menu = Category.objects.all()
+        except:
+            cat_menu = []
         context = super(HomeView, self).get_context_data(*args, **kwargs)
         context["cat_menu"] = cat_menu
         return context
